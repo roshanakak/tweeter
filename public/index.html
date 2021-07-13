@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/main.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -49,6 +50,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <br/>
       <section class="new-tweet">
         <form method="POST" action="/tweets/" class="new-tweet-form">
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
@@ -58,6 +60,57 @@
           </div>
         </form>
       </section>
+      <br/>
+
+      <section class="tweets">
+        <article >
+          <header>
+              <div>
+                <img src="/images/avatars/1.jpg" alt="Avatar" class="avatar">
+                Rachel Green
+              </div>
+              <label>@Rachel</label>
+          </header>
+          <content>
+            <div>
+              Hello World!
+            </div>
+          </content>
+          <footer>
+            <label>2 days ago</label>
+            <div>
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+          </footer>
+        </article>
+        <br/>
+
+        <article >
+          <header>
+              <div>
+                <img src="/images/avatars/2.jpg" alt="Avatar" class="avatar">
+                Chandler Bing
+              </div>
+              <label>@Chandler</label>
+          </header>
+          <content>
+            <div>I'm sooooo cool...</div>
+          </content>
+          <footer>
+            <label>2 days ago</label>
+            <div>
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+          </footer>
+        </article>
+        <br/>
+      </section>
+
+
     </main>
   </body>
 </html>
