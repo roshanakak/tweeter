@@ -1,6 +1,7 @@
 body > header {
-  z-index: 1;
-  height: 400px;
+  /* z-index: 1; */
+  padding-top: 120px;
+  height: 500px;
   width: 100%;
   display: flex;
   flex-direction: column;
