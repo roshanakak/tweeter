@@ -1,10 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-
 $(document).ready(function() {
 
   // Fake data taken from initial-tweets.json
@@ -66,4 +59,10 @@ $(document).ready(function() {
   
   };
   renderTweets(data);
+
+  $(".new-tweet").submit(function(event) {
+    event.preventDefault();
+    $.post("/tweets/", $("#tweet-text").serialize());
+  });
+
 });
