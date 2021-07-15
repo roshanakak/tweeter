@@ -35,10 +35,14 @@ $(document).ready(function() {
 
   $(".new-tweet-form").submit(function(event) {
     event.preventDefault();
-    if ($("#tweet-text").val().length > 0 && $("#tweet-text").val().length <= 140) {
+    if ($("#tweet-text").val().length === 0) {
+      alert('The tweet content is empty!');
+    } else if ($("#tweet-text").val().length > 140) {
+      alert('The tweet content is too long! It should be limited to 140 characters.');
+    } else {
       $.post("/tweets", $(".new-tweet-form").serialize());
       window.location.reload();
-    }
+    }  
   });
 
   const loadtweets = function() {
