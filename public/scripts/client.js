@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+
   const createTweetElement = function(tweetObj) {
     return `<article>
               <header>
@@ -29,17 +30,21 @@ $(document).ready(function() {
     tweetObjArray.forEach(element => {
       const $tweet = createTweetElement(element);
       $('#tweets-container').append($tweet);
-    });  
+    });
   };
 
-  $(".new-tweet").submit(function(event) {
+  $(".new-tweet-form").submit(function(event) {
     event.preventDefault();
-    $.post("/tweets", $("#tweet-text").serialize());
+    if ($("#tweet-text").val().length > 0 && $("#tweet-text").val().length <= 140) {
+      $.post("/tweets", $(".new-tweet-form").serialize());
+      window.location.reload();
+    }
   });
 
-  const loadtweets = function() {  
+  const loadtweets = function() {
     $.getJSON('/tweets', function(tweetsdata) {
-      renderTweets(tweetsdata);
+      let sortedTweets = tweetsdata.sort((a,b) => a.created_at > b.created_at && -1 || 1);
+      renderTweets(sortedTweets);
     });
   };
 
