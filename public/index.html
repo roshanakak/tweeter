@@ -26,15 +26,16 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/composer.js"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="title">tweeter</span>
-      <div>
+      <div id="write-new-tweet-div">
         <span id="write-new-tweet"> <strong>Write</strong> a new tweet </span>
-        <i class="fas fa-angle-double-down" id="arrows"  ></i>
+        <i class="fas fa-angle-double-down" id="arrows"></i>
       </div>
     </nav>
 
@@ -64,7 +65,13 @@
 
       <section class="tweets" id="tweets-container">
       </section>
-
     </main>
+
+    <div>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <i class="fas fa-angle-double-up"></i>
+      </button>
+    </div>
+
   </body>
 </html>

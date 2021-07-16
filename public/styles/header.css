@@ -1,6 +1,6 @@
 body > header {
   z-index: 1;
-  position: fixed;
+  position: relative;
   padding-top: 120px;
   height: 500px;
   width: 100%;

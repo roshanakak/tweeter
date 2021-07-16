@@ -63,24 +63,4 @@ $(document).ready(function() {
     }  
   });
 
-  document.querySelector("#arrows").addEventListener("click", (e) => {
-    e.preventDefault();
-    $("#tweet-text").focus();
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: "smooth"
-    });    
-  });
-
-  document.querySelector("#write-new-tweet").addEventListener("click", (e) => {
-    e.preventDefault();
-    $("#tweet-text").focus();
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: "smooth"
-    });    
-  });
-
 });
