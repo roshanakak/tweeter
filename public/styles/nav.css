@@ -24,3 +24,12 @@ nav > div {
   flex-direction: column;
   align-items: center;
 }
+
+nav > div > i {
+  color: red;
+}
+
+nav > div > i:hover {
+  position:relative;
+  top:20px;
+}
