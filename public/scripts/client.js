@@ -62,6 +62,7 @@ $(document).ready(function() {
       window.location.reload();
     }  
   });
+
   document.querySelector("#arrows").addEventListener("click", (e) => {
     e.preventDefault();
     $("#tweet-text").focus();
@@ -69,8 +70,17 @@ $(document).ready(function() {
       top: 0,
       left: 0,
       behavior: "smooth"
-    });
-    
+    });    
+  });
+
+  document.querySelector("#write-new-tweet").addEventListener("click", (e) => {
+    e.preventDefault();
+    $("#tweet-text").focus();
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    });    
   });
 
 });

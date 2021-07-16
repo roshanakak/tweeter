@@ -31,3 +31,8 @@ nav > div > i:hover {
   position:relative;
   top:20px;
 }
+
+nav > div > span:hover ~ #arrows {
+  position:relative;
+  top:20px;
+}
