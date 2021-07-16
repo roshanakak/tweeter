@@ -47,10 +47,11 @@ $(document).ready(function() {
     } else if ($("#tweet-text").val().length > 140) {
       alert('The tweet content is too long! It should be limited to 140 characters.');
     } else {
-      let tempObj = $("#tweet-text").serialize();
-      console.log(tempObj);
-      console.log($("#tweet-text").serialize());
-    }
+      //let tempObj = `text=${escape($("#tweet-text").val())}`;
+      
+      $.post("/tweets", $(".new-tweet-form").serialize());
+      window.location.reload();
+    }  
   });
 
   const loadtweets = function() {
