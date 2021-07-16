@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+  // togggle new tweet form on clicking compose
   document.querySelector("#arrows").addEventListener("click", (e) => {
     e.preventDefault();
     $(".new-tweet").toggle();
@@ -11,6 +12,7 @@ $(document).ready(function() {
   });
 
 
+  // showing and working of the scroll to top button
   window.onscroll = function() {
     scrollFunction();
   };

@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+
+  //creates html elements for displaying a tweet
   const createTweetElement = function(tweetObj) {
     return `<article>
               <header>
@@ -25,6 +27,7 @@ $(document).ready(function() {
   
   };
   
+  // receives an array of tweets and creates html content for them
   const renderTweets  = function(tweetObjArray) {
     tweetObjArray.forEach(element => {
       const $tweet = createTweetElement(element);
@@ -32,6 +35,7 @@ $(document).ready(function() {
     });
   };
 
+  // gets an array of tweets from /tweets route
   const loadtweets = function() {
     $.getJSON('/tweets', function(tweetsdata) {
       let sortedTweets = tweetsdata.sort((a,b) => a.created_at > b.created_at && -1 || 1);
@@ -41,12 +45,15 @@ $(document).ready(function() {
 
   loadtweets();
 
+
+  // to escape XSS injection
   const escape = function (str) {
     let input = $("<div>").text(str);
     return "text=" + input[0].innerHTML;
 
   };
 
+  // uses ajax post instead of ordinary html post for submitting tweets
   $(".new-tweet-form").submit(function(event) {
     event.preventDefault();
     if ($("#tweet-text").val().length === 0) {
