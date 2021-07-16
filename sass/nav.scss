@@ -1,0 +1,64 @@
+$font-color: #FFFFFF;
+$arrows-hover-movement: 20px;
+$arrows-color: red;
+$nav-height: 120px;
+
+/* Mobile Styles */
+nav {
+  position: fixed; 
+  z-index: 2;
+  height: $nav-height;
+  width: 100%;
+  color: $font-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5em;
+
+  span {
+    font-family: Bungee, sans-serif;
+    font-size: xx-large;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    i {
+      color: $arrows-color;
+    }
+
+    span {
+      font-family: Source Sans Pro, sans-serif;
+      font-size: large;
+    }
+
+    i:hover {
+      position:relative;
+      top: $arrows-hover-movement;
+    }
+
+    span:hover ~ #arrows {
+      position:relative;
+      top: $arrows-hover-movement;
+    }
+  }
+}
+
+
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  nav {
+    position: fixed;   
+    height: $nav-height;
+    width: 100%;
+    color: $font-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5em;
+    background-image: url('../images/fabric.png');
+  }
+}

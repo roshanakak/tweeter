@@ -1,6 +1,6 @@
 /* Mobile Styles */
 nav {
-  position: fixed; 
+  position: fixed;
   z-index: 2;
   height: 120px;
   width: 100%;
@@ -10,38 +10,35 @@ nav {
   justify-content: space-between;
   padding: 1.5em;
 }
-
-nav > span {
+nav span {
   font-family: Bungee, sans-serif;
   font-size: xx-large;
 }
-
-nav > div {
+nav div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-nav > div > i {
+nav div i {
   color: red;
 }
-
-nav > div > i:hover {
-  position:relative;
-  top:20px;
+nav div span {
+  font-family: Source Sans Pro, sans-serif;
+  font-size: large;
 }
-
-nav > div > span:hover ~ #arrows {
-  position:relative;
-  top:20px;
+nav div i:hover {
+  position: relative;
+  top: 20px;
 }
-
+nav div span:hover ~ #arrows {
+  position: relative;
+  top: 20px;
+}
 
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
   nav {
-    position: fixed; 
-  
+    position: fixed;
     height: 120px;
     width: 100%;
     color: #FFFFFF;
@@ -49,11 +46,6 @@ nav > div > span:hover ~ #arrows {
     align-items: center;
     justify-content: space-between;
     padding: 1.5em;
-    background-image: url('../images/fabric.png');
+    background-image: url("../images/fabric.png");
   }
 }
-
-
-    /* z-index: 2; */
-  /* background-color: rgb(49, 71, 86); */
-

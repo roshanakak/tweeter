@@ -38,6 +38,7 @@ $(document).ready(function() {
 
   document.querySelector("#myBtn").addEventListener("click", (e) => {
     e.preventDefault();
+    $("#tweet-text").focus();
     window.scroll({
       top: 0,
       left: 0,

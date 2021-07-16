@@ -1,17 +1,24 @@
+$font-color: #FFFFFF;
+$arrows-hover-movement: 20px;
+$arrows-color: red;
+$header-height: 500px;
+$header-padding: 120px;
+
 /* Mobile Styles */
 body > header {
   z-index: 1;
   position: relative;
-  padding-top: 120px;
-  height: 500px;
+  padding-top: $header-padding;
+  height: $header-height;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("../images/fabric.png");
-  color: #FFFFFF;
+  background-image: url('../images/fabric.png');
+  color: $font-color;
 }
+
 
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
@@ -22,5 +29,5 @@ body > header {
     margin-top: 10em;
     margin-right: 100px;
     padding-top: 50px;
-  }
+  } 
 }
