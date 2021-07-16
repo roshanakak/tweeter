@@ -43,10 +43,11 @@ $(document).ready(function() {
   $(".new-tweet-form").submit(function(event) {
     event.preventDefault();
     if ($("#tweet-text").val().length === 0) {
-      alert('The tweet content is empty!');
+      $('#new-tweet-error').text('The tweet content is empty!');
     } else if ($("#tweet-text").val().length > 140) {
-      alert('The tweet content is too long! It should be limited to 140 characters.');
+      $('#new-tweet-error').text('The tweet content is too long! It should be limited to 140 characters.');
     } else {
+      $('#new-tweet-error').text('');
       //let tempObj = `text=${escape($("#tweet-text").val())}`;
       
       $.post("/tweets", $(".new-tweet-form").serialize());
