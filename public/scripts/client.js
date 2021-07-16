@@ -33,6 +33,13 @@ $(document).ready(function() {
     });
   };
 
+  const escape = function (str) {
+    //str = str.replace(/(<([^>]+)>)/ig,"");
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   $(".new-tweet-form").submit(function(event) {
     event.preventDefault();
     if ($("#tweet-text").val().length === 0) {
@@ -40,9 +47,10 @@ $(document).ready(function() {
     } else if ($("#tweet-text").val().length > 140) {
       alert('The tweet content is too long! It should be limited to 140 characters.');
     } else {
-      $.post("/tweets", $(".new-tweet-form").serialize());
-      window.location.reload();
-    }  
+      let tempObj = $("#tweet-text").serialize();
+      console.log(tempObj);
+      console.log($("#tweet-text").serialize());
+    }
   });
 
   const loadtweets = function() {
