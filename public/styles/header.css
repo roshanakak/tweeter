@@ -1,3 +1,4 @@
+/* Mobile Styles */
 body > header {
   z-index: 1;
   position: relative;
@@ -10,4 +11,18 @@ body > header {
   align-items: center;
   background-image: url('../images/fabric.png');
   color: #FFFFFF;
+  /* margin-top: 5em; */
+}
+
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  body > header {
+    position: fixed;
+    float: left;
+    width: 35%;
+    margin-top: 10em;
+    margin-right: 100px;
+    padding-top: 50px;
+  } 
 }
