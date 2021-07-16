@@ -27,21 +27,15 @@ nav {
 
     i {
       color: $arrows-color;
+      position: relative;
+      animation-name: example;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;      
     }
 
     span {
       font-family: Source Sans Pro, sans-serif;
       font-size: large;
-    }
-
-    i:hover {
-      position:relative;
-      top: $arrows-hover-movement;
-    }
-
-    span:hover ~ #arrows {
-      position:relative;
-      top: $arrows-hover-movement;
     }
   }
 }
@@ -60,5 +54,18 @@ nav {
     justify-content: space-between;
     padding: 1.5em;
     background-image: url('../images/fabric.png');
+  }
+}
+
+
+@keyframes example {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 10px;
+  }
+  100% {
+    top: 0px;
   }
 }

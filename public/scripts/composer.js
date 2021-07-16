@@ -2,25 +2,14 @@ $(document).ready(function() {
 
   document.querySelector("#arrows").addEventListener("click", (e) => {
     e.preventDefault();
-    $("#tweet-text").focus();
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: "smooth"
-    });    
+    $(".new-tweet").toggle();
   });
 
   document.querySelector("#write-new-tweet").addEventListener("click", (e) => {
     e.preventDefault();
-    $("#tweet-text").focus();
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: "smooth"
-    });
+    $(".new-tweet").toggle();
   });
 
-  const mybutton = document.getElementById("myBtn");
 
   window.onscroll = function() {
     scrollFunction();
@@ -28,11 +17,11 @@ $(document).ready(function() {
   
   const scrollFunction = function() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      mybutton.style.display = "block";
-      document.getElementById("write-new-tweet-div").style.display = "none";
+      $("#myBtn").show();
+      $("#write-new-tweet-div").hide();
     } else {
-      mybutton.style.display = "none";
-      document.getElementById("write-new-tweet-div").style.display = "block";
+      $("#myBtn").hide();
+      $("#write-new-tweet-div").show();
     }
   };
 
