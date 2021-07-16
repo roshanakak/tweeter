@@ -42,10 +42,9 @@ $(document).ready(function() {
   loadtweets();
 
   const escape = function (str) {
-    //str = str.replace(/(<([^>]+)>)/ig,"");
-    let div = document.createElement("div");
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
+    let input = $("<div>").text(str);
+    return "text=" + input[0].innerHTML;
+
   };
 
   $(".new-tweet-form").submit(function(event) {
@@ -56,9 +55,7 @@ $(document).ready(function() {
       $('#new-tweet-error').text('The tweet content is too long! It should be limited to 140 characters.');
     } else {
       $('#new-tweet-error').text('');
-      //let tempObj = `text=${escape($("#tweet-text").val())}`;
-      
-      $.post("/tweets", $(".new-tweet-form").serialize());
+      $.post("/tweets", escape($('#tweet-text').val()));
       window.location.reload();
     }  
   });
